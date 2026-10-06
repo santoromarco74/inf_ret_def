@@ -81,12 +81,6 @@ public final class Benchmark {
                 riga(o, "", "con varianti", valuta(se::search, esatte, true, base.size()));
             }
         }
-        // confronto con libreria di terzi (fastText): addestrato sul testo del corpus, non sull'indice corretto
-        FastTextConfronto ft = new FastTextConfronto(base);
-        for (PrintStream o : new PrintStream[]{System.out, out}) {
-            riga(o, "fastText (LIBRERIA, confronto)", "tutte", valuta(ft::search, esatte, false, base.size()));
-            riga(o, "", "con varianti", valuta(ft::search, esatte, true, base.size()));
-        }
         for (PrintStream o : new PrintStream[]{System.out, out}) o.println("\nwildcard (prefisso del modello + '*'), indice senza/con correzione");
         for (Object[] s : new Object[][]{{"wildcard", base}, {"wildcard su indice corretto", corretto}}) {
             Searcher se = new Searcher((InvertedIndex) s[1], Searcher.ModoFuzzy.NO);

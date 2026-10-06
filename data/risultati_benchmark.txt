@@ -11,8 +11,6 @@ correzione OCR                  tutte        0.985  0.853  0.893  0.9996  (n=214
                                 con varianti 0.965  0.516  0.657  0.9989  (n=65)
 correzione OCR + fuzzy sempre   tutte        0.846  0.981  0.883  0.9991  (n=214)
                                 con varianti 0.862  0.937  0.871  0.9992  (n=65)
-fastText (LIBRERIA, confronto)  tutte        0.444  0.992  0.577  0.9952  (n=214)
-                                con varianti 0.513  0.973  0.634  0.9962  (n=65)
 
 wildcard (prefisso del modello + '*'), indice senza/con correzione
 wildcard                        tutte        0.860  0.890  0.831  0.9989  (n=214)
