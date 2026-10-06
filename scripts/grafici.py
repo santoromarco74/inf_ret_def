@@ -10,7 +10,7 @@ COL = {"P": "#2a6fbb", "R": "#e08a1e", "F1": "#3f9a6b"}
 
 
 def leggi(path="data/risultati_benchmark.txt"):
-    """Ritorna {sistema: {'tutte': (P,R,F1), 'varianti': (P,R,F1)}} per i sistemi con query esatte e fastText."""
+    """Ritorna {sistema: {'tutte': (P,R,F1), 'varianti': (P,R,F1)}} per i sistemi con query esatte."""
     out, corrente = {}, None
     for riga in open(path, encoding="utf-8"):
         m = re.match(r"^(\S.*?)\s{2,}(tutte|con varianti)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+[\d.]+", riga)
@@ -77,8 +77,7 @@ def barre_raggruppate(titolo, categorie, serie, nomi, colori, path, ymax=1.0, fm
 def main():
     d = leggi()
     sistemi = [("esatta", "esatta"), ("fuzzy sempre", "fuzzy|sempre"), ("correzione OCR", "correzione|OCR"),
-               ("correzione OCR + fuzzy sempre", "corr. OCR +|fuzzy sempre"),
-               ("fastText (LIBRERIA, confronto)", "fastText|(libreria)")]
+               ("correzione OCR + fuzzy sempre", "corr. OCR +|fuzzy sempre")]
     mancanti = [n for n, _ in sistemi if n not in d]
     if mancanti:
         sys.exit("sistemi non trovati in risultati_benchmark.txt: %s" % mancanti)

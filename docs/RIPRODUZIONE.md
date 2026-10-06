@@ -3,7 +3,6 @@
 ```
 scripts/ocr.sh                                          # scansioni/ -> data/ocr/  (richiede tesseract-ocr-ita, imagemagick, poppler-utils)
 mvn -q compile
-CP="target/classes:$(mvn -q dependency:build-classpath -Dmdep.outputFile=/dev/stdout)"   # classpath con le dipendenze (serve per Benchmark)
 java -cp target/classes ir.corpus.CorpusBuilder         # data/ocr -> data/corpus.tsv, data/righe_escluse.tsv
 java -cp target/classes ir.Cli "friggitrice aria" --bm25 --or   # ordine per punteggio (--tfidf, --bm25), --or = almeno una parola
 java -cp target/classes ir.Cli "lava*" --ocr            # prova da riga di comando
@@ -16,7 +15,7 @@ java -cp target/classes ir.Esempi                       # gli esempi citati nell
 java -cp target/classes ir.Compressione                 # spazio prima/dopo la compressione
 java -cp target/classes ir.ValutaCorrezione             # valutazione della correzione OCR
 java -cp target/classes ir.ConfrontoStrutture           # tabella hash, albero binario di ricerca, heap: statistiche e tempi (data/confronto_strutture.txt)
-java -cp "$CP" ir.Benchmark                           # data/risultati_benchmark.txt
+java -cp target/classes ir.Benchmark                   # data/risultati_benchmark.txt
 python3 scripts/grafici.py                              # docs/img/*.svg dai risultati del benchmark
 mvn -q test                                             # test automatici
 ```
@@ -29,8 +28,6 @@ Serve un JDK 17 o superiore a 64 bit (`java -version`); Maven non va installato,
 
 ```
 .\mvnw.cmd -q compile
-.\mvnw.cmd -q dependency:build-classpath "-Dmdep.outputFile=target\cp.txt"
-$CP = "target\classes;" + (Get-Content target\cp.txt)
 
 java -cp target\classes ir.corpus.CorpusBuilder      # data\ocr -> data\corpus.tsv, data\righe_escluse.tsv
 java -cp target\classes ir.Cli "friggitrice aria" --bm25 --or   # ordine per punteggio
@@ -44,6 +41,6 @@ java -cp target\classes ir.Esempi
 java -cp target\classes ir.Compressione
 java -cp target\classes ir.ValutaCorrezione
 java -cp target\classes ir.ConfrontoStrutture
-java -cp $CP ir.Benchmark                            # serve il classpath con fastText
+java -cp target\classes ir.Benchmark
 .\mvnw.cmd -q test
 ```

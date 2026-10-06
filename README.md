@@ -21,7 +21,6 @@ Ricerca di articoli su bolle/DDT scansionati (testo OCR) con indici sviluppati n
 | Interfaccia web minimale (barra di ricerca + 2 opzioni, `com.sun.net.httpserver` della JDK, `WebServer`) | codice sopra libreria standard | fatto |
 | Test collection (ricerca dell'articolo noto, rilevanza per codice) e metriche P/R/F1/accuratezza (`Benchmark`) | codice | fatto: `data/risultati_benchmark.txt` |
 | Esempi riproducibili per la relazione (`Esempi`) e grafici SVG (`scripts/grafici.py`, Python stdlib) | codice | fatto |
-| fastText come modello di confronto (`FastTextConfronto`, wrapper `com.github.vinhkhuc:jfasttext`) | **libreria** | fatto, solo nel benchmark |
 
 ## Come eseguire
 

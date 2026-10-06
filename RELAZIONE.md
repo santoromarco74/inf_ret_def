@@ -23,9 +23,8 @@ Un sistema che cerca **articoli su bolle di trasporto (DDT) scansionate**. Ogni 
 | Interfaccia web e riga di comando | `WebServer`, `Cli` | **Codice**, sopra `com.sun.net.httpserver` della JDK |
 | Benchmark, esempi, grafici | `Benchmark`, `Esempi`, `scripts/grafici.py` | **Codice** (grafici: Python, sola libreria standard) |
 | Test automatici | `src/test` | JUnit 5 (libreria) |
-| fastText (solo confronto) | `FastTextConfronto` | **Libreria** di terzi: fastText (Facebook) tramite il wrapper Java `com.github.vinhkhuc:jfasttext` 0.5 (JNI, dipende da `org.bytedeco:javacpp`). Addestramento e vettori sono della libreria; il codice del progetto contiene solo l'uso come espansione dei termini (§10.5) |
 
-«Codice» indica ciò che è realizzato nel progetto e non viene da librerie di terzi; «libreria» indica software di terzi. Il supporto dell'assistente IA è dichiarato al §14. Nessuna libreria di indicizzazione (Lucene, SQLite FTS5…) è usata e non c'è un database: gli indici sono strutture realizzate nel progetto, tenute in memoria durante la ricerca, con una copia salvabile su file (§7.3). fastText compare solo nel benchmark, non in `Searcher`, riga di comando o interfaccia web.
+«Codice» indica ciò che è realizzato nel progetto e non viene da librerie di terzi; «libreria» indica software di terzi. Il supporto dell'assistente IA è dichiarato al §14. Nessuna libreria di indicizzazione (Lucene, SQLite FTS5…) è usata e non c'è un database: gli indici sono strutture realizzate nel progetto, tenute in memoria durante la ricerca, con una copia salvabile su file (§7.3). Il sistema Java non ha dipendenze di terzi oltre alla JDK: l'unica libreria dichiarata in `pom.xml` è JUnit 5, usata solo per i test.
 
 ## 3. Il corpus: dalla scansione alla riga articolo
 
@@ -173,7 +172,7 @@ Se una query non restituisce nulla $P=0$; le tabelle riportano la **media sulle 
 
 ### 10.2 Risultati sulle query esatte e wildcard
 
-Sistemi: *esatta*; *fuzzy solo se assente* (§6.3); *fuzzy sempre*; *correzione OCR* (indice del §9); la combinazione; *fastText* (libreria). Wildcard: query con prefisso e `*`, su indice normale o corretto.
+Sistemi: *esatta*; *fuzzy solo se assente* (§6.3); *fuzzy sempre*; *correzione OCR* (indice del §9); la combinazione. Wildcard: query con prefisso e `*`, su indice normale o corretto.
 
 | Sistema | P | R | F1 | P (con varianti) | R (con varianti) | F1 (con varianti) |
 |---|---|---|---|---|---|---|
@@ -182,7 +181,6 @@ Sistemi: *esatta*; *fuzzy solo se assente* (§6.3); *fuzzy sempre*; *correzione 
 | fuzzy sempre | 0,847 | 0,981 | 0,884 | 0,865 | 0,937 | 0,873 |
 | correzione OCR | 0,985 | 0,853 | 0,893 | 0,965 | 0,516 | 0,657 |
 | correzione OCR + fuzzy sempre | 0,846 | 0,981 | 0,883 | 0,862 | 0,937 | 0,871 |
-| fastText (**libreria**) | 0,444 | 0,992 | 0,577 | 0,513 | 0,973 | 0,634 |
 | wildcard (indice normale) | 0,860 | 0,890 | 0,831 | 0,897 | 0,638 | 0,695 |
 | wildcard (indice corretto) | 0,850 | 0,890 | 0,829 | 0,866 | 0,639 | 0,688 |
 
@@ -221,23 +219,18 @@ $$AP(q)=\frac{1}{|Rel|}\sum_{k=1}^{n}P@k\cdot r_k\qquad MAP=\frac{1}{|Q|}\sum_{q
 - **TF-IDF e BM25** danno gli stessi valori (differenza solo nel fuzzy: P@1 0,757 contro 0,762). Ipotesi, non verificata: solo 150 coppie termine-documento su 12647 (1,2%) hanno $tf>1$, quindi decide l'idf.
 - **Fuzzy sempre**: P@1 scende a 0,76; ipotesi, non verificata: le varianti errate (rare) hanno idf più alto del termine corretto e passano avanti.
 
-### 10.5 fastText (libreria, solo confronto)
-
-`FastTextConfronto` addestra un modello skipgram con n-grammi di carattere (3-6) sul solo testo del corpus; ogni termine del dizionario ha un vettore (anche quelli mai visti, dai loro n-grammi) e una parola della query si espande nei termini a coseno più alto (al massimo 5 vicini con coseno ≥ 0,9). Ha il richiamo più alto (0,992) e la precisione più bassa (0,444): su 1067 righe i vettori discriminano poco e molti vicini non sono lo stesso prodotto (`8gb`/`6gb`). Parametri fissati a priori e **non ottimizzati sul benchmark**. Non supporta le wildcard. L'addestramento usa un thread, ma i risultati non sono identici tra macchine (su Windows si sono ottenuti P = 0,451 e R = 0,993); gli altri sistemi sono deterministici.
-
 ## 11. Interfaccia
 
 `WebServer` mostra una barra di ricerca sopra lo stesso `Searcher` (server della JDK, HTML lato server, senza JavaScript né framework, con escape di query e risultati). Opzioni: modalità fuzzy, correzione OCR, ordinamento (nessun punteggio / TF-IDF / BM25), OR; `*` vale come jolly. `ir.Cli` offre la stessa ricerca (`--ocr`, `--no-fuzzy`, `--tfidf`, `--bm25`, `--or`); entrambi accettano `--file` per caricare l'indice persistente (§7.3).
 
 ## 12. Discussione e limiti
 
-- La ricerca esatta è difficile da battere in F1: fuzzy sempre, correzione OCR e fastText spostano soprattutto l'equilibrio fra precisione e richiamo. Il fuzzy recupera errori che il correttore non conosce (`J/I`) ma costa falsi positivi su codici simili; la correzione sbaglia meno ma recupera poco.
+- La ricerca esatta è difficile da battere in F1: fuzzy sempre e correzione OCR spostano soprattutto l'equilibrio fra precisione e richiamo. Il fuzzy recupera errori che il correttore non conosce (`J/I`) ma costa falsi positivi su codici simili; la correzione sbaglia meno ma recupera poco.
 - Il punteggio conta soprattutto con molti documenti (OR); su questo corpus TF-IDF e BM25 sono indistinguibili (§10.4).
 - Un solo fornitore e un corpus piccolo (1067 righe): i numeri mostrano un comportamento, non una prestazione generale. La rilevanza è automatica (stesso codice).
 - Gli errori OCR diversi dagli scambi confondibili non sono corretti; il fuzzy «solo se assente» non parte se l'errore è un'altra parola valida. La quantità resta in coda alla descrizione; 5 documenti hanno numero e data illeggibili e una pagina (`20260703100204858`) resta capovolta.
 - L'indice è persistente solo se salvato esplicitamente (§7.3), a sola lettura, con i trigrammi ricostruiti a ogni avvio.
 - L'albero binario di ricerca dei termini non è bilanciato: con termini inseriti in ordine alfabetico diventerebbe una lista (§4.1). Nell'indice invertito l'ordine di inserimento è quello del corpus, e per l'indice a trigrammi l'albero si costruisce dai termini ordinati; un inserimento in ordine alfabetico in un indice aggiornato in modo incrementale degraderebbe la ricerca per prefisso.
-- fastText usa un wrapper di terzi con libreria nativa (provata su Linux e Windows x86-64); altrove il test viene saltato e il benchmark non gira.
 
 ## 13. Riproduzione
 
@@ -250,7 +243,7 @@ Nella stesura del presente progetto («Archivio Bolle», complemento all'esame d
 - **Strumento**: Claude (Anthropic), usato tramite Claude Code, assistente di programmazione, in sessioni su ambiente cloud. Versione del modello: [da indicare, se richiesta].
 - **Perimetro**: il codice Java del sistema (parser OCR, indice invertito, skip list, trigrammi con wildcard e fuzzy, compressione, persistenza, correzione OCR, ranking TF-IDF e BM25, benchmark, interfaccia web) e i relativi test; gli script di supporto e la configurazione Maven; la bozza della relazione e della documentazione; l'esecuzione dei programmi di misura e la correzione degli errori emersi. Obiettivi e vincoli sono stati forniti dall'autore all'assistente. Le scansioni delle bolle e il testo OCR sono stati elaborati nell'ambiente di lavoro dell'assistente.
 - **Modalità**: generazione di codice su indicazioni dell'autore, poi eseguito e verificato con test automatici (scritti anch'essi con l'assistente); debugging; stesura e revisione della bozza della relazione e della documentazione su richiesta dell'autore; analisi dei risultati sperimentali.
-- **Altri strumenti software**: Tesseract (OCR) e fastText sono componenti usati dal sistema (§2), non strumenti usati per redigere il lavoro.
+- **Altri strumenti software**: Tesseract (OCR) è un componente usato dal sistema (§2), non uno strumento usato per redigere il lavoro.
 
 <!-- DA VERIFICARE PRIMA DI CONSEGNARE: tenere la frase seguente solo se è vera. -->
 Si dichiara che tutti i contenuti generati con il supporto dell'IA sono stati criticamente verificati e rielaborati personalmente, e che l'autore si assume la piena responsabilità della correttezza e dell'originalità del lavoro presentato.
