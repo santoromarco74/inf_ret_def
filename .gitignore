@@ -1,6 +1,0 @@
-target/
-scansioni/
-*.tif
-*.tiff
-data/indice.bin
-data/indice_ocr.bin
