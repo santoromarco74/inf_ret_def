@@ -24,7 +24,7 @@ Le scansioni sono dati aziendali: la pipeline le legge da `scansioni/`; il lavor
 
 ## Windows (PowerShell)
 
-Serve un JDK 17 o superiore a 64 bit (`java -version`); Maven non va installato, c'è il wrapper `mvnw.cmd` (al primo avvio scarica Maven). Il passo OCR (`scripts/ocr.sh`) è uno script bash: su Windows non serve rilanciarlo, perché il testo OCR è già in `data/ocr/`.
+Serve un JDK 17 o superiore a 64 bit (`java -version`); Maven non va installato, c'è il wrapper `mvnw.cmd` (al primo avvio scarica Maven). Il passo OCR (`scripts/ocr.sh`) è uno script bash: su Windows non serve rilanciarlo, perché il testo OCR è già in `data/ocr/`. Per rilanciarlo (nuove scansioni) usa Git Bash, non PowerShell (che non esegue gli script `.sh`), con `tesseract` (lingue `ita` e `osd`), ImageMagick e poppler nel `PATH`, e i percorsi fra virgolette singole o con slash normali: `./scripts/ocr.sh 'C:\scansioni' 'C:\prova'` oppure `./scripts/ocr.sh C:/scansioni C:/prova`. Senza virgolette bash elimina i backslash (`C:\scansioni` diventa `C:scansioni`).
 
 ```
 .\mvnw.cmd -q compile
