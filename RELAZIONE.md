@@ -233,6 +233,8 @@ $$AP(q)=\frac{1}{|Rel|}\sum_{k=1}^{n}P@k\cdot r_k\qquad MAP=\frac{1}{|Q|}\sum_{q
 - L'indice è persistente solo se salvato esplicitamente (§7.3), a sola lettura, con i trigrammi ricostruiti a ogni avvio.
 - L'albero binario di ricerca dei termini non è bilanciato: con termini inseriti in ordine alfabetico diventerebbe una lista (§4.1). Nell'indice invertito l'ordine di inserimento è quello del corpus, e per l'indice a trigrammi l'albero si costruisce dai termini ordinati; un inserimento in ordine alfabetico in un indice aggiornato in modo incrementale degraderebbe la ricerca per prefisso.
 
+
+
 ## 13. Riproduzione
 
 Comandi per Linux/macOS e Windows PowerShell tratti dal file in `docs/RIPRODUZIONE.md`.
