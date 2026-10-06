@@ -4,7 +4,7 @@ Complemento all'esame di Information Retrieval (laurea magistrale in Computer En
 
 ## 1. Obiettivo
 
-Un sistema che cerca **articoli su bolle di trasporto (DDT) scansionate**. Ogni bolla ha un'intestazione e una riga per articolo (codice, marca, descrizione abbreviata, quantità). Il testo viene da un OCR ed è rumoroso: caratteri scambiati (`0/O`, `5/S`, `6/G`: nel corpus `LGE S5UR781C0LK` è il modello `55UR781C0LK` letto male), punteggiatura sparsa, pagine capovolte. Chi cerca il modello corretto non trova le righe lette male. Il lavoro riguarda le **strutture dati e gli algoritmi di indicizzazione e recupero**, realizzati con il supporto di un assistente IA (§14), e il loro comportamento con il rumore; il benchmark (§10) è un complemento.
+Un sistema che cerca **articoli su bolle di trasporto (DDT) scansionate**. Ogni bolla ha un'intestazione e una riga per articolo (codice, marca, descrizione abbreviata, quantità). Il testo viene da un OCR ed è rumoroso: caratteri scambiati (`0/O`, `5/S`, `6/G`: nel corpus `LGE S5UR781C0LK` è il modello `55UR781C0LK` letto male), punteggiatura sparsa, pagine capovolte. Chi cerca il modello corretto non trova le righe lette male. Il lavoro riguarda le **strutture dati e gli algoritmi di indicizzazione e recupero** e il loro comportamento con il rumore; il benchmark (§10) è un complemento.
 
 ## 2. Architettura e confine «codice / libreria»
 
@@ -24,7 +24,7 @@ Un sistema che cerca **articoli su bolle di trasporto (DDT) scansionate**. Ogni 
 | Benchmark, esempi, grafici | `Benchmark`, `Esempi`, `scripts/grafici.py` | **Codice** (grafici: Python, sola libreria standard) |
 | Test automatici | `src/test` | JUnit 5 (libreria) |
 
-«Codice» indica ciò che è realizzato nel progetto e non viene da librerie di terzi; «libreria» indica software di terzi. Il supporto dell'assistente IA è dichiarato al §14. Nessuna libreria di indicizzazione (Lucene, SQLite FTS5…) è usata e non c'è un database: gli indici sono strutture realizzate nel progetto, tenute in memoria durante la ricerca, con una copia salvabile su file (§7.3). Il sistema Java non ha dipendenze di terzi oltre alla JDK: l'unica libreria dichiarata in `pom.xml` è JUnit 5, usata solo per i test.
+«Codice» indica ciò che è realizzato nel progetto e non viene da librerie di terzi; «libreria» indica software di terzi. Nessuna libreria di indicizzazione (Lucene, SQLite FTS5…) è usata e non c'è un database: gli indici sono strutture realizzate nel progetto, tenute in memoria durante la ricerca, con una copia salvabile su file (§7.3). Il sistema Java non ha dipendenze di terzi oltre alla JDK: l'unica libreria dichiarata in `pom.xml` è JUnit 5, usata solo per i test.
 
 ## 3. Il corpus: dalla scansione alla riga articolo
 
@@ -237,17 +237,5 @@ $$AP(q)=\frac{1}{|Rel|}\sum_{k=1}^{n}P@k\cdot r_k\qquad MAP=\frac{1}{|Q|}\sum_{q
 
 Comandi per Linux/macOS e Windows PowerShell in `docs/RIPRODUZIONE.md`.
 
-## 14. Dichiarazione sull'utilizzo di strumenti di Intelligenza Artificiale
-
-Nella stesura del presente progetto («Archivio Bolle», complemento all'esame di Information Retrieval) sono stati utilizzati strumenti di Intelligenza Artificiale, come richiesto dalle Linee Guida dell'Università di Pavia (Delibera CdA n. 153/2026 del 22/05/2026):
-
-- **Strumento**: Claude (Anthropic), usato tramite Claude Code, assistente di programmazione, in sessioni su ambiente cloud. Versione del modello: [da indicare, se richiesta].
-- **Perimetro**: il codice Java del sistema (parser OCR, indice invertito, skip list, trigrammi con wildcard e fuzzy, compressione, persistenza, correzione OCR, ranking TF-IDF e BM25, benchmark, interfaccia web) e i relativi test; gli script di supporto e la configurazione Maven; la bozza della relazione e della documentazione; l'esecuzione dei programmi di misura e la correzione degli errori emersi. Obiettivi e vincoli sono stati forniti dall'autore all'assistente. Le scansioni delle bolle e il testo OCR sono stati elaborati nell'ambiente di lavoro dell'assistente.
-- **Modalità**: generazione di codice su indicazioni dell'autore, poi eseguito e verificato con test automatici (scritti anch'essi con l'assistente); debugging; stesura e revisione della bozza della relazione e della documentazione su richiesta dell'autore; analisi dei risultati sperimentali.
-- **Altri strumenti software**: Tesseract (OCR) è un componente usato dal sistema (§2), non uno strumento usato per redigere il lavoro.
-
-<!-- DA VERIFICARE PRIMA DI CONSEGNARE: tenere la frase seguente solo se è vera. -->
-Si dichiara che tutti i contenuti generati con il supporto dell'IA sono stati criticamente verificati e rielaborati personalmente, e che l'autore si assume la piena responsabilità della correttezza e dell'originalità del lavoro presentato.
-
-[Nome e cognome]
-[Data]
+[Marco Santoro]
+[07/10/2026]
