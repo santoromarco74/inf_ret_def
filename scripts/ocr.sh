@@ -12,9 +12,17 @@ errore() { echo "ERRORE: $*" >&2; }
 
 # Controlli preliminari: una dipendenza mancante va segnalata, non produce file vuoti.
 manca=0
-for cmd in tesseract convert pdftoppm; do
+for cmd in tesseract pdftoppm; do
   command -v "$cmd" >/dev/null 2>&1 || { errore "comando '$cmd' non trovato (servono tesseract-ocr-ita, imagemagick, poppler-utils)"; manca=1; }
 done
+# ImageMagick: 'magick' (v7) oppure 'convert' (v6). Su Windows 'convert' di solito e' un altro programma
+# (convert.exe di sistema, convertitore di dischi), quindi si accetta solo un comando che si dichiara ImageMagick.
+IM=""
+for cmd in magick convert; do
+  if command -v "$cmd" >/dev/null 2>&1 && "$cmd" -version 2>&1 | grep -qi imagemagick; then IM="$cmd"; break; fi
+done
+[ -n "$IM" ] || { errore "ImageMagick non trovato: serve 'magick' (v7) o 'convert' (v6) di ImageMagick; su Windows 'convert' e' un programma di sistema diverso"; manca=1; }
+export IM
 if command -v tesseract >/dev/null 2>&1; then
   langs="$(tesseract --list-langs 2>&1 || true)"
   for l in ita osd; do
@@ -41,8 +49,8 @@ ocr_file() {
   case "$f" in
     *.[pP][dD][fF]) pdftoppm -r 300 -png "$f" "$tmp/p" 2>"$tmp/err" ||
                       { fallito "$base" "pdftoppm: $(tail -n1 "$tmp/err")"; return 1; } ;;
-    *)              convert "$f" "$tmp/p-%03d.png" 2>"$tmp/err" ||
-                      { fallito "$base" "convert: $(tail -n1 "$tmp/err")"; return 1; } ;;
+    *)              "$IM" "$f" "$tmp/p-%03d.png" 2>"$tmp/err" ||
+                      { fallito "$base" "$IM: $(tail -n1 "$tmp/err")"; return 1; } ;;
   esac
   set -- "$tmp"/p-*.png
   [ -e "$1" ] || { fallito "$base" "nessuna pagina estratta"; return 1; }
@@ -52,7 +60,7 @@ ocr_file() {
     n=$((n + 1))
     # l'OSD fallisce su pagine con poco testo: e' normale, in quel caso nessuna rotazione
     rot="$(tesseract "$p" stdout --psm 0 -l osd 2>/dev/null | awk '/^Rotate:/{print $2}')"
-    [ "${rot:-0}" != "0" ] && convert "$p" -rotate "$rot" "$p"
+    [ "${rot:-0}" != "0" ] && "$IM" "$p" -rotate "$rot" "$p"
     tesseract "$p" stdout -l ita --psm 6 >> "$OUT/$base.txt" 2>"$tmp/err" ||
       { fallito "$base" "tesseract, pagina $n: $(tail -n1 "$tmp/err")"; return 1; }
     printf '\f' >> "$OUT/$base.txt"   # separatore di pagina
