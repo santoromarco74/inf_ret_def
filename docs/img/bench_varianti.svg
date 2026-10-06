@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 330" font-family="sans-serif" font-size="11">
+<rect width="820" height="330" fill="white"/>
+<text x="410.0" y="22" text-anchor="middle" font-size="14" font-weight="bold">Le 65 query con almeno una riga letta diversamente: precisione, richiamo, F1</text>
+<line x1="50" y1="255.0" x2="800" y2="255.0" stroke="#ddd"/>
+<text x="44" y="259.0" text-anchor="end" fill="#555">0</text>
+<line x1="50" y1="213.0" x2="800" y2="213.0" stroke="#ddd"/>
+<text x="44" y="217.0" text-anchor="end" fill="#555">0.2</text>
+<line x1="50" y1="171.0" x2="800" y2="171.0" stroke="#ddd"/>
+<text x="44" y="175.0" text-anchor="end" fill="#555">0.4</text>
+<line x1="50" y1="129.0" x2="800" y2="129.0" stroke="#ddd"/>
+<text x="44" y="133.0" text-anchor="end" fill="#555">0.6</text>
+<line x1="50" y1="87.0" x2="800" y2="87.0" stroke="#ddd"/>
+<text x="44" y="91.0" text-anchor="end" fill="#555">0.8</text>
+<line x1="50" y1="45.0" x2="800" y2="45.0" stroke="#ddd"/>
+<text x="44" y="49.0" text-anchor="end" fill="#555">1</text>
+<rect x="70.6" y="45.0" width="46.8" height="210.0" fill="#2a6fbb"/>
+<text x="94.0" y="42.0" text-anchor="middle" font-size="9" fill="#333">1,00</text>
+<rect x="119.4" y="150.8" width="46.8" height="104.2" fill="#e08a1e"/>
+<text x="142.8" y="147.8" text-anchor="middle" font-size="9" fill="#333">0,50</text>
+<rect x="168.1" y="117.4" width="46.8" height="137.6" fill="#3f9a6b"/>
+<text x="191.5" y="114.4" text-anchor="middle" font-size="9" fill="#333">0,66</text>
+<text x="143.8" y="271" text-anchor="middle" fill="#333">esatta</text>
+<rect x="258.1" y="73.3" width="46.8" height="181.7" fill="#2a6fbb"/>
+<text x="281.5" y="70.3" text-anchor="middle" font-size="9" fill="#333">0,87</text>
+<rect x="306.9" y="58.2" width="46.8" height="196.8" fill="#e08a1e"/>
+<text x="330.2" y="55.2" text-anchor="middle" font-size="9" fill="#333">0,94</text>
+<rect x="355.6" y="71.7" width="46.8" height="183.3" fill="#3f9a6b"/>
+<text x="379.0" y="68.7" text-anchor="middle" font-size="9" fill="#333">0,87</text>
+<text x="331.2" y="271" text-anchor="middle" fill="#333">fuzzy</text>
+<text x="331.2" y="284" text-anchor="middle" fill="#333">sempre</text>
+<rect x="445.6" y="52.3" width="46.8" height="202.7" fill="#2a6fbb"/>
+<text x="469.0" y="49.3" text-anchor="middle" font-size="9" fill="#333">0,97</text>
+<rect x="494.4" y="146.6" width="46.8" height="108.4" fill="#e08a1e"/>
+<text x="517.8" y="143.6" text-anchor="middle" font-size="9" fill="#333">0,52</text>
+<rect x="543.1" y="117.0" width="46.8" height="138.0" fill="#3f9a6b"/>
+<text x="566.5" y="114.0" text-anchor="middle" font-size="9" fill="#333">0,66</text>
+<text x="518.8" y="271" text-anchor="middle" fill="#333">correzione</text>
+<text x="518.8" y="284" text-anchor="middle" fill="#333">OCR</text>
+<rect x="633.1" y="74.0" width="46.8" height="181.0" fill="#2a6fbb"/>
+<text x="656.5" y="71.0" text-anchor="middle" font-size="9" fill="#333">0,86</text>
+<rect x="681.9" y="58.2" width="46.8" height="196.8" fill="#e08a1e"/>
+<text x="705.2" y="55.2" text-anchor="middle" font-size="9" fill="#333">0,94</text>
+<rect x="730.6" y="72.1" width="46.8" height="182.9" fill="#3f9a6b"/>
+<text x="754.0" y="69.1" text-anchor="middle" font-size="9" fill="#333">0,87</text>
+<text x="706.2" y="271" text-anchor="middle" fill="#333">corr. OCR +</text>
+<text x="706.2" y="284" text-anchor="middle" fill="#333">fuzzy sempre</text>
+<rect x="50" y="308" width="12" height="12" fill="#2a6fbb"/><text x="67" y="318">P</text>
+<rect x="140" y="308" width="12" height="12" fill="#e08a1e"/><text x="157" y="318">R</text>
+<rect x="230" y="308" width="12" height="12" fill="#3f9a6b"/><text x="247" y="318">F1</text>
+<line x1="50" y1="255" x2="800" y2="255" stroke="#333"/></svg>
