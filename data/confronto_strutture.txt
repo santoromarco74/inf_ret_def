@@ -1,0 +1,19 @@
+documenti 1067, termini 3046
+
+TabellaHash (dizionario dell'indice invertito)
+  bucket 4096, occupati 2175, fattore di carico 0.74
+  catena piu' lunga 6, nodi visitati per ricerca (media) 1.36
+
+AlberoBinarioRicerca (termini in ordine, non bilanciato)
+  inseriti nell'ordine del corpus: altezza 29 (minimo possibile 12), confronti per ricerca (media) 14.00
+  inseriti in ordine alfabetico: altezza 3046
+  costruito dai termini ordinati (termine di mezzo per primo): altezza 12, confronti per ricerca (media) 10.66
+
+Ricerca di un termine (609200 ricerche, mediana di 5 prove, ms)
+  TabellaHash 19.5 | AlberoBinarioRicerca 93.8 | HashMap (libreria) 3.6 | TreeMap (libreria) 60.4
+
+Termini con un dato prefisso (1462 prefissi di 3 lettere, ms)
+  AlberoBinarioRicerca 0.94 | scansione del dizionario 12.14 | termini trovati 2846 = 2846
+
+Primi 10 risultati su 200000 punteggi casuali (ms)
+  HeapBinario 1.3 | ordinamento completo (libreria) 60.5
