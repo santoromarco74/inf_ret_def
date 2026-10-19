@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 730" font-family="sans-serif" font-size="11">
+<defs><marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+<rect width="1160" height="730" fill="white"/>
+<text x="580.0" y="24" text-anchor="middle" font-size="14" font-weight="bold">Tabella hash del dizionario: 3046 termini in 4096 bucket</text>
+<text x="580.0" y="42" text-anchor="middle" fill="#555">funzione FNV-1a a 32 bit, indice = hash &amp; 4095 (numero di bucket - 1); collisioni in catene concatenate, inserimento in testa; raddoppio oltre il carico 0,75</text>
+<rect x="20" y="70" width="87" height="30" rx="6" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="63" y="90" text-anchor="middle" font-size="12" font-weight="bold">lavatrice</text>
+<text x="63" y="116" text-anchor="middle" font-size="9.5" fill="#555">termine</text>
+<line x1="110" y1="85" x2="133" y2="85" stroke="#555" marker-end="url(#fr)"/>
+<rect x="136.60000000000002" y="70" width="94" height="30" rx="6" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="184" y="90" text-anchor="middle" font-size="12" font-weight="bold">0x34C27D5A</text>
+<text x="184" y="116" text-anchor="middle" font-size="9.5" fill="#555">hash FNV-1a (32 bit)</text>
+<line x1="234" y1="85" x2="257" y2="85" stroke="#555" marker-end="url(#fr)"/>
+<rect x="260.6" y="70" width="109" height="30" rx="6" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="315" y="90" text-anchor="middle" font-size="12" font-weight="bold">0xD5A = 3418</text>
+<text x="315" y="116" text-anchor="middle" font-size="9.5" fill="#555">hash &amp; 4095 (= 0xFFF)</text>
+<line x1="372" y1="85" x2="395" y2="85" stroke="#555" marker-end="url(#fr)"/>
+<rect x="399.40000000000003" y="70" width="101" height="30" rx="6" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="450" y="90" text-anchor="middle" font-size="12" font-weight="bold">bucket 3418</text>
+<text x="450" y="116" text-anchor="middle" font-size="9.5" fill="#555">indice nell'array</text>
+<text x="66" y="165.0" text-anchor="end" fill="#666" font-size="10">0</text>
+<rect x="74" y="150" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="165.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="191.0" text-anchor="end" fill="#666" font-size="10">1</text>
+<rect x="74" y="176" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="191.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="217.0" text-anchor="end" fill="#666" font-size="10">2</text>
+<rect x="74" y="202" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="217.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="243.0" text-anchor="end" fill="#666" font-size="10">3</text>
+<rect x="74" y="228" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="243.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="269.0" text-anchor="end" fill="#666" font-size="10">4</text>
+<rect x="74" y="254" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="269.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="295.0" text-anchor="end" fill="#666" font-size="10">5</text>
+<rect x="74" y="280" width="70" height="22" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<line x1="146" y1="291.0" x2="167" y2="291.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="280" width="46.0" height="22" rx="4" fill="white" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="191.0" y="295" text-anchor="middle" font-size="11">hr</text>
+<text x="220" y="294.0" fill="#999" font-size="9">null</text>
+<text x="66" y="321.0" text-anchor="end" fill="#666" font-size="10">6</text>
+<rect x="74" y="306" width="70" height="22" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<line x1="146" y1="317.0" x2="167" y2="317.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="306" width="62.2" height="22" rx="4" fill="white" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="199.1" y="321" text-anchor="middle" font-size="11">acciaiò</text>
+<text x="236.2" y="320.0" fill="#999" font-size="9">null</text>
+<text x="66" y="347.0" text-anchor="end" fill="#666" font-size="10">7</text>
+<rect x="74" y="332" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="347.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="373.0" text-anchor="end" fill="#666" font-size="10">8</text>
+<rect x="74" y="358" width="70" height="22" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<line x1="146" y1="369.0" x2="167" y2="369.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="358" width="46.0" height="22" rx="4" fill="white" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="191.0" y="373" text-anchor="middle" font-size="11">lcd</text>
+<text x="220" y="372.0" fill="#999" font-size="9">null</text>
+<text x="66" y="399.0" text-anchor="end" fill="#666" font-size="10">9</text>
+<rect x="74" y="384" width="70" height="22" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<line x1="146" y1="395.0" x2="167" y2="395.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="384" width="46.0" height="22" rx="4" fill="white" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="191.0" y="399" text-anchor="middle" font-size="11">28mm</text>
+<text x="220" y="398.0" fill="#999" font-size="9">null</text>
+<text x="66" y="425.0" text-anchor="end" fill="#666" font-size="10">10</text>
+<rect x="74" y="410" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="425.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="451.0" text-anchor="end" fill="#666" font-size="10">11</text>
+<rect x="74" y="436" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="451.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="477.0" text-anchor="end" fill="#666" font-size="10">12</text>
+<rect x="74" y="462" width="70" height="22" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<line x1="146" y1="473.0" x2="167" y2="473.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="462" width="46.0" height="22" rx="4" fill="white" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="191.0" y="477" text-anchor="middle" font-size="11">sh</text>
+<text x="220" y="476.0" fill="#999" font-size="9">null</text>
+<text x="66" y="503.0" text-anchor="end" fill="#666" font-size="10">13</text>
+<rect x="74" y="488" width="70" height="22" fill="#f5f5f5" stroke="#bbb" stroke-width="1.2"/>
+<text x="109.0" y="503.0" text-anchor="middle" fill="#aaa" font-size="10">vuoto</text>
+<text x="66" y="529.0" text-anchor="end" fill="#666" font-size="10">14</text>
+<rect x="74" y="514" width="70" height="22" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<line x1="146" y1="525.0" x2="167" y2="525.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="514" width="49.0" height="22" rx="4" fill="white" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="192.5" y="529" text-anchor="middle" font-size="11">giall</text>
+<text x="223.0" y="528.0" fill="#999" font-size="9">null</text>
+<text x="66" y="555.0" text-anchor="end" fill="#666" font-size="10">15</text>
+<rect x="74" y="540" width="70" height="22" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<line x1="146" y1="551.0" x2="167" y2="551.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="540" width="55.6" height="22" rx="4" fill="white" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="195.8" y="555" text-anchor="middle" font-size="11">603984</text>
+<text x="229.6" y="554.0" fill="#999" font-size="9">null</text>
+<text x="109.0" y="582" text-anchor="middle" fill="#888" font-size="10">… bucket 16–84 non mostrati</text>
+<text x="66" y="616.0" text-anchor="end" fill="#666" font-size="10">85</text>
+<rect x="74" y="592" width="70" height="40" fill="#fdf0dc" stroke="#e08a1e" stroke-width="1.2"/>
+<line x1="146" y1="612.0" x2="167" y2="612.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="592" width="75.4" height="40" rx="4" fill="white" stroke="#e08a1e" stroke-width="1.2"/>
+<text x="205.7" y="608" text-anchor="middle" font-size="11">extrabass</text>
+<text x="205.7" y="623" text-anchor="middle" font-size="9" fill="#666">1 nodo</text>
+<line x1="245.4" y1="612.0" x2="266.4" y2="612.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="267.4" y="592" width="62.2" height="40" rx="4" fill="white" stroke="#e08a1e" stroke-width="1.2"/>
+<text x="298.5" y="608" text-anchor="middle" font-size="11">sanitas</text>
+<text x="298.5" y="623" text-anchor="middle" font-size="9" fill="#666">2 nodi</text>
+<line x1="331.59999999999997" y1="612.0" x2="352.59999999999997" y2="612.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="353.59999999999997" y="592" width="55.6" height="40" rx="4" fill="white" stroke="#e08a1e" stroke-width="1.2"/>
+<text x="381.4" y="608" text-anchor="middle" font-size="11">948025</text>
+<text x="381.4" y="623" text-anchor="middle" font-size="9" fill="#666">3 nodi</text>
+<line x1="411.19999999999993" y1="612.0" x2="432.19999999999993" y2="612.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="433.19999999999993" y="592" width="68.8" height="40" rx="4" fill="white" stroke="#e08a1e" stroke-width="1.2"/>
+<text x="467.6" y="608" text-anchor="middle" font-size="11">hc5200m2</text>
+<text x="467.6" y="623" text-anchor="middle" font-size="9" fill="#666">4 nodi</text>
+<line x1="503.99999999999994" y1="612.0" x2="525.0" y2="612.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="526.0" y="592" width="46.0" height="40" rx="4" fill="white" stroke="#e08a1e" stroke-width="1.2"/>
+<text x="549.0" y="608" text-anchor="middle" font-size="11">2gb</text>
+<text x="549.0" y="623" text-anchor="middle" font-size="9" fill="#666">5 nodi</text>
+<line x1="574.0" y1="612.0" x2="595.0" y2="612.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="596.0" y="592" width="49.0" height="40" rx="4" fill="white" stroke="#e08a1e" stroke-width="1.2"/>
+<text x="620.5" y="608" text-anchor="middle" font-size="11">350ml</text>
+<text x="620.5" y="623" text-anchor="middle" font-size="9" fill="#666">6 nodi</text>
+<text x="651.0" y="615.0" fill="#999" font-size="9">null</text>
+<text x="681.0" y="607" font-size="10" fill="#555">tutti e 6 gli hash terminano in</text>
+<text x="681.0" y="621" font-size="10" fill="#555">055 (= 85): catena più lunga</text>
+<text x="109.0" y="654" text-anchor="middle" fill="#888" font-size="10">… bucket 86–3417 non mostrati</text>
+<text x="66" y="679.0" text-anchor="end" fill="#666" font-size="10">3418</text>
+<rect x="74" y="664" width="70" height="22" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<line x1="146" y1="675.0" x2="167" y2="675.0" stroke="#555" marker-end="url(#fr)"/>
+<rect x="168" y="664" width="75.4" height="22" rx="4" fill="white" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="205.7" y="679" text-anchor="middle" font-size="11">lavatrice</text>
+<text x="249.4" y="678.0" fill="#999" font-size="9">null</text>
+<text x="279.4" y="679" font-size="10" fill="#555">1 nodo visitato per trovare "lavatrice"</text>
+<text x="1005.0" y="150" text-anchor="middle" font-size="12" font-weight="bold">Lunghezza delle catene</text>
+<text x="1005.0" y="165" text-anchor="middle" fill="#555">numero di bucket (su 4096) per lunghezza</text>
+<rect x="884.3" y="190.0" width="27.1" height="190.0" fill="#bbb"/>
+<text x="897.9" y="186.0" text-anchor="middle" font-size="10" fill="#333">1921</text>
+<text x="897.9" y="395" text-anchor="middle" fill="#333">0</text>
+<rect x="920.0" y="232.2" width="27.1" height="147.8" fill="#2a6fbb"/>
+<text x="933.6" y="228.2" text-anchor="middle" font-size="10" fill="#333">1494</text>
+<text x="933.6" y="395" text-anchor="middle" fill="#333">1</text>
+<rect x="955.7" y="327.8" width="27.1" height="52.2" fill="#2a6fbb"/>
+<text x="969.3" y="323.8" text-anchor="middle" font-size="10" fill="#333">528</text>
+<text x="969.3" y="395" text-anchor="middle" fill="#333">2</text>
+<rect x="991.4" y="367.6" width="27.1" height="12.4" fill="#2a6fbb"/>
+<text x="1005.0" y="363.6" text-anchor="middle" font-size="10" fill="#333">125</text>
+<text x="1005.0" y="395" text-anchor="middle" fill="#333">3</text>
+<rect x="1027.1" y="378.0" width="27.1" height="2.0" fill="#2a6fbb"/>
+<text x="1040.7" y="374.0" text-anchor="middle" font-size="10" fill="#333">20</text>
+<text x="1040.7" y="395" text-anchor="middle" fill="#333">4</text>
+<rect x="1062.9" y="379.3" width="27.1" height="0.7" fill="#2a6fbb"/>
+<text x="1076.4" y="375.3" text-anchor="middle" font-size="10" fill="#333">7</text>
+<text x="1076.4" y="395" text-anchor="middle" fill="#333">5</text>
+<rect x="1098.6" y="379.9" width="27.1" height="0.1" fill="#e08a1e"/>
+<text x="1112.1" y="375.9" text-anchor="middle" font-size="10" fill="#333">1</text>
+<text x="1112.1" y="395" text-anchor="middle" fill="#333">6</text>
+<line x1="880" y1="380" x2="1130" y2="380" stroke="#333"/>
+<text x="1005.0" y="412" text-anchor="middle" fill="#555">lunghezza della catena (nodi)</text>
+<text x="950" y="450" text-anchor="end" font-weight="bold">3046</text>
+<text x="960" y="450" fill="#555">termini</text>
+<text x="950" y="469" text-anchor="end" font-weight="bold">4096</text>
+<text x="960" y="469" fill="#555">bucket</text>
+<text x="950" y="488" text-anchor="end" font-weight="bold">2175</text>
+<text x="960" y="488" fill="#555">bucket occupati</text>
+<text x="950" y="507" text-anchor="end" font-weight="bold">1921 (47%)</text>
+<text x="960" y="507" fill="#555">bucket vuoti</text>
+<text x="950" y="526" text-anchor="end" font-weight="bold">0,74</text>
+<text x="960" y="526" fill="#555">fattore di carico</text>
+<text x="950" y="545" text-anchor="end" font-weight="bold">6</text>
+<text x="960" y="545" fill="#555">catena più lunga</text>
+<text x="950" y="564" text-anchor="end" font-weight="bold">1,36</text>
+<text x="960" y="564" fill="#555">nodi visitati per ricerca (media)</text>
+</svg>
