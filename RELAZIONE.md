@@ -4,7 +4,7 @@ Complemento all'esame di Information Retrieval (laurea magistrale in Computer En
 
 ## 1. Obiettivo
 
-Un sistema che cerca **articoli su bolle di trasporto (DDT) scansionate**. Ogni bolla ha un'intestazione e una riga per articolo (codice, marca, descrizione abbreviata, quantità). Il testo viene da un OCR ed è rumoroso: caratteri scambiati (`0/O`, `5/S`, `6/G`: nel corpus `LGE S5UR781C0LK` è il modello `55UR781C0LK` letto male), punteggiatura sparsa, pagine capovolte. Chi cerca il modello corretto non trova le righe lette male. Il lavoro riguarda le **strutture dati e gli algoritmi di indicizzazione e recupero**, realizzati con il supporto di un assistente IA (§14), e il loro comportamento con il rumore; il benchmark (§10) è un complemento.
+Un sistema che cerca **articoli su bolle di trasporto (DDT) scansionate**. Ogni bolla ha un'intestazione e una riga per articolo (codice, marca, descrizione abbreviata, quantità). Il testo viene da un OCR ed è rumoroso: caratteri scambiati (`0/O`, `5/S`, `6/G`: nel corpus `LGE S5UR781C0LK` è il modello `55UR781C0LK` letto male), punteggiatura sparsa, pagine capovolte. Chi cerca il modello corretto non trova le righe lette male. Il lavoro riguarda le **strutture dati e gli algoritmi di indicizzazione e recupero** e il loro comportamento con il rumore; il benchmark (§10) è un complemento.
 
 ## 2. Architettura e confine «codice / libreria»
 
@@ -24,7 +24,7 @@ Un sistema che cerca **articoli su bolle di trasporto (DDT) scansionate**. Ogni 
 | Benchmark, esempi, grafici | `Benchmark`, `Esempi`, `scripts/grafici.py` | **Codice** (grafici: Python, sola libreria standard) |
 | Test automatici | `src/test` | JUnit 5 (libreria) |
 
-«Codice» indica ciò che è realizzato nel progetto e non viene da librerie di terzi; «libreria» indica software di terzi. Il supporto dell'assistente IA è dichiarato al §14. Nessuna libreria di indicizzazione (Lucene, SQLite FTS5…) è usata e non c'è un database: gli indici sono strutture realizzate nel progetto, tenute in memoria durante la ricerca, con una copia salvabile su file (§7.3). Il sistema Java non ha dipendenze di terzi oltre alla JDK: l'unica libreria dichiarata in `pom.xml` è JUnit 5, usata solo per i test.
+«Codice» indica ciò che è realizzato nel progetto e non viene da librerie di terzi; «libreria» indica software di terzi. Nessuna libreria di indicizzazione (Lucene, SQLite FTS5…) è usata e non c'è un database: gli indici sono strutture realizzate nel progetto, tenute in memoria durante la ricerca, con una copia salvabile su file (§7.3). Il sistema Java non ha dipendenze di terzi oltre alla JDK: l'unica libreria dichiarata in `pom.xml` è JUnit 5, usata solo per i test.
 
 ## 3. Il corpus: dalla scansione alla riga articolo
 
@@ -235,19 +235,52 @@ $$AP(q)=\frac{1}{|Rel|}\sum_{k=1}^{n}P@k\cdot r_k\qquad MAP=\frac{1}{|Q|}\sum_{q
 
 ## 13. Riproduzione
 
-Comandi per Linux/macOS e Windows PowerShell in `docs/RIPRODUZIONE.md`.
+Comandi per Linux/macOS e Windows PowerShell tratti dal file in `docs/RIPRODUZIONE.md`.
 
-## 14. Dichiarazione sull'utilizzo di strumenti di Intelligenza Artificiale
+```
+scripts/ocr.sh                                          # scansioni/ -> data/ocr/  (richiede tesseract-ocr-ita, imagemagick, poppler-utils)
+mvn -q compile
+java -cp target/classes ir.corpus.CorpusBuilder         # data/ocr -> data/corpus.tsv, data/righe_escluse.tsv
+java -cp target/classes ir.Cli "friggitrice aria" --bm25 --or   # ordine per punteggio (--tfidf, --bm25), --or = almeno una parola
+java -cp target/classes ir.Cli "lava*" --ocr            # prova da riga di comando
+java -cp target/classes ir.WebServer 8080               # interfaccia web su http://localhost:8080
+java -cp target/classes ir.Persistenza                  # salva l'indice compresso: data/indice.bin e data/indice_ocr.bin
+java -cp target/classes ir.Persistenza tempi carica 20  # tempo di avvio da file (oppure: tempi build 20)
+java -cp target/classes ir.Cli "lava*" --file           # ricerca sull'indice caricato da file
+java -cp target/classes ir.WebServer 8080 --file        # interfaccia web sull'indice caricato da file
+java -cp target/classes ir.Esempi                       # gli esempi citati nella relazione
+java -cp target/classes ir.Compressione                 # spazio prima/dopo la compressione
+java -cp target/classes ir.ValutaCorrezione             # valutazione della correzione OCR
+java -cp target/classes ir.ConfrontoStrutture           # tabella hash, albero binario di ricerca, heap: statistiche e tempi (data/confronto_strutture.txt)
+java -cp target/classes ir.Benchmark                   # data/risultati_benchmark.txt
+python3 scripts/grafici.py                              # docs/img/*.svg dai risultati del benchmark
+mvn -q test                                             # test automatici
+```
 
-Nella stesura del presente progetto («Archivio Bolle», complemento all'esame di Information Retrieval) sono stati utilizzati strumenti di Intelligenza Artificiale, come richiesto dalle Linee Guida dell'Università di Pavia (Delibera CdA n. 153/2026 del 22/05/2026):
+Le scansioni sono dati aziendali: la pipeline le legge da `scansioni/`; il lavoro prodotto (script, testo OCR, corpus estratto) sta in `scripts/` e `data/`.
 
-- **Strumento**: Claude (Anthropic), usato tramite Claude Code, assistente di programmazione, in sessioni su ambiente cloud. Versione del modello: [da indicare, se richiesta].
-- **Perimetro**: il codice Java del sistema (parser OCR, indice invertito, skip list, trigrammi con wildcard e fuzzy, compressione, persistenza, correzione OCR, ranking TF-IDF e BM25, benchmark, interfaccia web) e i relativi test; gli script di supporto e la configurazione Maven; la bozza della relazione e della documentazione; l'esecuzione dei programmi di misura e la correzione degli errori emersi. Obiettivi e vincoli sono stati forniti dall'autore all'assistente. Le scansioni delle bolle e il testo OCR sono stati elaborati nell'ambiente di lavoro dell'assistente.
-- **Modalità**: generazione di codice su indicazioni dell'autore, poi eseguito e verificato con test automatici (scritti anch'essi con l'assistente); debugging; stesura e revisione della bozza della relazione e della documentazione su richiesta dell'autore; analisi dei risultati sperimentali.
-- **Altri strumenti software**: Tesseract (OCR) è un componente usato dal sistema (§2), non uno strumento usato per redigere il lavoro.
+## Windows (PowerShell)
 
-<!-- DA VERIFICARE PRIMA DI CONSEGNARE: tenere la frase seguente solo se è vera. -->
-Si dichiara che tutti i contenuti generati con il supporto dell'IA sono stati criticamente verificati e rielaborati personalmente, e che l'autore si assume la piena responsabilità della correttezza e dell'originalità del lavoro presentato.
+Serve un JDK 17 o superiore a 64 bit (`java -version`); Maven non va installato, c'è il wrapper `mvnw.cmd` (al primo avvio scarica Maven). Il passo OCR (`scripts/ocr.sh`) è uno script bash: su Windows non serve rilanciarlo, perché il testo OCR è già in `data/ocr/`. Per rilanciarlo (nuove scansioni) usa Git Bash, non PowerShell (che non esegue gli script `.sh`), con `tesseract` (lingue `ita` e `osd`), ImageMagick 7 (comando `magick`; il `convert` di Windows è un altro programma e viene ignorato) e poppler nel `PATH`, e i percorsi fra virgolette singole o con slash normali: `./scripts/ocr.sh 'C:\scansioni' 'C:\prova'` oppure `./scripts/ocr.sh C:/scansioni C:/prova`. Senza virgolette bash elimina i backslash (`C:\scansioni` diventa `C:scansioni`).
 
-[Nome e cognome]
-[Data]
+```
+.\mvnw.cmd -q compile
+
+java -cp target\classes ir.corpus.CorpusBuilder      # data\ocr -> data\corpus.tsv, data\righe_escluse.tsv
+java -cp target\classes ir.Cli "friggitrice aria" --bm25 --or   # ordine per punteggio
+java -cp target\classes ir.Cli "lava*" --ocr          # prova da riga di comando
+java -cp target\classes ir.WebServer 8080             # interfaccia web su http://localhost:8080
+java -cp target\classes ir.Persistenza                 # salva data\indice.bin e data\indice_ocr.bin
+java -cp target\classes ir.Cli "lava*" --file          # ricerca sull'indice caricato da file
+java -cp target\classes ir.WebServer 8080 --file       # interfaccia web sull'indice caricato da file
+java -cp target\classes ir.Persistenza tempi carica 20
+java -cp target\classes ir.Esempi
+java -cp target\classes ir.Compressione
+java -cp target\classes ir.ValutaCorrezione
+java -cp target\classes ir.ConfrontoStrutture
+java -cp target\classes ir.Benchmark
+.\mvnw.cmd -q test
+```
+
+[Marco Santoro]
+[07/10/2026]
