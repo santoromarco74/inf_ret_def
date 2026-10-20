@@ -9,18 +9,23 @@ import sys
 COL = {"P": "#2a6fbb", "R": "#e08a1e", "F1": "#3f9a6b"}
 
 
+def num(s):
+    """Numero con punto o virgola decimale: ir.Benchmark scrive col separatore delle impostazioni della macchina."""
+    return float(s.replace(",", "."))
+
+
 def leggi(path="data/risultati_benchmark.txt"):
     """Ritorna {sistema: {'tutte': (P,R,F1), 'varianti': (P,R,F1)}} per i sistemi con query esatte."""
     out, corrente = {}, None
     for riga in open(path, encoding="utf-8"):
-        m = re.match(r"^(\S.*?)\s{2,}(tutte|con varianti)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+[\d.]+", riga)
+        m = re.match(r"^(\S.*?)\s{2,}(tutte|con varianti)\s+([\d.,]+)\s+([\d.,]+)\s+([\d.,]+)\s+[\d.,]+", riga)
         if m:
             corrente = m.group(1)
-            out.setdefault(corrente, {})["tutte"] = tuple(float(x) for x in m.group(3, 4, 5))
+            out.setdefault(corrente, {})["tutte"] = tuple(num(x) for x in m.group(3, 4, 5))
             continue
-        m = re.match(r"^\s+(con varianti)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+[\d.]+\s+\(n=", riga)
+        m = re.match(r"^\s+(con varianti)\s+([\d.,]+)\s+([\d.,]+)\s+([\d.,]+)\s+[\d.,]+\s+\(n=", riga)
         if m and corrente:
-            out[corrente]["varianti"] = tuple(float(x) for x in m.group(2, 3, 4))
+            out[corrente]["varianti"] = tuple(num(x) for x in m.group(2, 3, 4))
     return out
 
 
@@ -35,14 +40,14 @@ def leggi_ranking(path="data/risultati_benchmark.txt"):
             break
         if not attivo:
             continue
-        m = re.match(r"^(\S.*?)\s{2,}(tutte)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+\(n=", riga)
+        m = re.match(r"^(\S.*?)\s{2,}(tutte)\s+([\d.,]+)\s+([\d.,]+)\s+([\d.,]+)\s+\(n=", riga)
         if m:
-            corrente = [m.group(1), tuple(float(x) for x in m.group(3, 4, 5)), None]
+            corrente = [m.group(1), tuple(num(x) for x in m.group(3, 4, 5)), None]
             out.append(corrente)
             continue
-        m = re.match(r"^\s+(con varianti)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+\(n=", riga)
+        m = re.match(r"^\s+(con varianti)\s+([\d.,]+)\s+([\d.,]+)\s+([\d.,]+)\s+\(n=", riga)
         if m and corrente:
-            corrente[2] = tuple(float(x) for x in m.group(2, 3, 4))
+            corrente[2] = tuple(num(x) for x in m.group(2, 3, 4))
     return out
 
 
