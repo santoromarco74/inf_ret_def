@@ -18,7 +18,7 @@ Ricerca di articoli su bolle/DDT scansionati (testo OCR) con indici sviluppati n
 | Correzione OCR mirata sui termini (scambi confusabili 0/o 1/i 5/s 6/g 8/b 7/t verso termini con df maggiore, `OcrCorrector`) | codice | fatto |
 | OCR (Tesseract `ita`, rotazione via OSD; `scripts/ocr.sh`) | libreria/strumento esterno | fatto: 134 scansioni → `data/ocr/` |
 | Parsing OCR → `data/corpus.tsv` + righe escluse tracciate (`ir.corpus`, regex JDK) | codice | fatto |
-| Interfaccia web minimale (barra di ricerca + 2 opzioni, `com.sun.net.httpserver` della JDK, `WebServer`) | codice sopra libreria standard | fatto |
+| Interfaccia web minimale (barra di ricerca + opzioni, punteggio e termini trovati per ogni riga, `com.sun.net.httpserver` della JDK, `WebServer`) | codice sopra libreria standard | fatto |
 | Test collection (ricerca dell'articolo noto, rilevanza per codice) e metriche P/R/F1/accuratezza (`Benchmark`) | codice | fatto: `data/risultati_benchmark.txt` |
 | Esempi riproducibili per la relazione (`Esempi`) e grafici SVG (`scripts/grafici.py`, Python stdlib) | codice | fatto |
 

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Ricerca sopra un Indice (InvertedIndex o CompressedIndex) + KGramIndex. Query = parole separate da spazio, in AND.
@@ -69,9 +70,40 @@ public final class Searcher {
 
     /** Come sopra, ma solo i primi k risultati, estratti con un {@link HeapBinario} (O(n log k)). */
     public List<Integer> searchRanked(String query, Ranker.Modello modello, boolean and, int k) {
+        List<Integer> out = new ArrayList<>();
+        for (int d : classifica(query, modello, and, k).ids()) out.add(d);
+        return out;
+    }
+
+    /** Un risultato con il suo punteggio (0 senza modello) e i termini del dizionario che hanno fatto trovare la riga. */
+    public record Risultato(int docId, double punteggio, List<String> termini) {}
+
+    /** I primi k risultati e il numero totale di righe trovate. */
+    public record Risposta(int totale, List<Risultato> risultati) {}
+
+    /**
+     * Come {@link #searchRanked(String, Ranker.Modello, boolean, int)}, con in piu' punteggio e termini di ogni risultato.
+     * I termini sono quelli a cui le parole della query sono espanse (wildcard, fuzzy) la cui posting list contiene la riga,
+     * in ordine alfabetico. Si calcolano solo per i primi k.
+     */
+    public Risposta searchDettaglio(String query, Ranker.Modello modello, boolean and, int k) {
+        Classifica c = classifica(query, modello, and, k);
+        List<String> espansi = new ArrayList<>(new TreeSet<>(c.espansi()));
+        List<Risultato> out = new ArrayList<>();
+        for (int d : c.ids()) {
+            List<String> termini = new ArrayList<>();
+            for (String t : espansi) if (index.postings(t).contiene(d)) termini.add(t);
+            out.add(new Risultato(d, c.punteggi().getOrDefault(d, 0.0), termini));
+        }
+        return new Risposta(c.totale(), out);
+    }
+
+    private record Classifica(int totale, int[] ids, Map<Integer, Double> punteggi, Set<String> espansi) {}
+
+    private Classifica classifica(String query, Ranker.Modello modello, boolean and, int k) {
         List<String> parole = new ArrayList<>();
         for (String p : query.toLowerCase(Locale.ITALIAN).trim().split("\\s+")) if (!p.isEmpty()) parole.add(p);
-        if (parole.isEmpty()) return List.of();
+        if (parole.isEmpty()) return new Classifica(0, new int[0], Map.of(), Set.of());
         Set<String> espansi = new HashSet<>();
         for (String p : parole) espansi.addAll(espandi(p));
         Map<Integer, Double> punteggi = ranker.punteggi(espansi, modello);
@@ -80,8 +112,6 @@ public final class Searcher {
         double[] pt = new double[ids.length];
         int i = 0;
         for (int d : candidati) { ids[i] = d; pt[i++] = punteggi.getOrDefault(d, 0.0); }
-        List<Integer> out = new ArrayList<>();
-        for (int d : HeapBinario.topK(ids, pt, k)) out.add(d);
-        return out;
+        return new Classifica(ids.length, HeapBinario.topK(ids, pt, k), punteggi, espansi);
     }
 }

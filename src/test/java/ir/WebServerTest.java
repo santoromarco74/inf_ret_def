@@ -41,6 +41,17 @@ class WebServerTest {
     }
 
     @Test
+    void punteggioETerminiNellaPagina() {
+        WebServer w = web();
+        String bm25 = w.pagina("friggitrice aria", Searcher.ModoFuzzy.NO, false, Ranker.Modello.BM25, true);
+        assertTrue(bm25.contains("<small>punteggio "));
+        assertTrue(bm25.contains("trovata per: aria, friggitrice"));
+        String nessuno = w.pagina("friggitrice aria", Searcher.ModoFuzzy.NO, false, Ranker.Modello.NESSUNO, true);
+        assertFalse(nessuno.contains("<small>punteggio "));
+        assertTrue(nessuno.contains("trovata per: aria, friggitrice"));
+    }
+
+    @Test
     void parametriUrl() {
         assertEquals(Map.of("q", "lava*", "ocr", "1"), WebServer.parametri("q=lava%2A&ocr=1"));
     }

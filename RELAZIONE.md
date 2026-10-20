@@ -221,7 +221,7 @@ $$AP(q)=\frac{1}{|Rel|}\sum_{k=1}^{n}P@k\cdot r_k\qquad MAP=\frac{1}{|Q|}\sum_{q
 
 ## 11. Interfaccia
 
-`WebServer` mostra una barra di ricerca sopra lo stesso `Searcher` (server della JDK, HTML lato server, senza JavaScript né framework, con escape di query e risultati). Opzioni: modalità fuzzy, correzione OCR, ordinamento (nessun punteggio / TF-IDF / BM25), OR; `*` vale come jolly. `ir.Cli` offre la stessa ricerca (`--ocr`, `--no-fuzzy`, `--tfidf`, `--bm25`, `--or`); entrambi accettano `--file` per caricare l'indice persistente (§7.3).
+`WebServer` mostra una barra di ricerca sopra lo stesso `Searcher` (server della JDK, HTML lato server, senza JavaScript né framework, con escape di query e risultati). Opzioni: modalità fuzzy, correzione OCR, ordinamento (nessun punteggio / TF-IDF / BM25), OR; `*` vale come jolly. `ir.Cli` offre la stessa ricerca (`--ocr`, `--no-fuzzy`, `--tfidf`, `--bm25`, `--or`); entrambi accettano `--file` per caricare l'indice persistente (§7.3). Entrambi mostrano, per ogni riga, il punteggio (con TF-IDF o BM25) e i termini del dizionario che l'hanno fatta trovare (`Searcher.searchDettaglio`): con OR, fuzzy e wildcard si vede quale parola o espansione ha portato la riga nell'elenco.
 
 ## 12. Discussione e limiti
 

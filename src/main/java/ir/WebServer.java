@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -68,9 +69,15 @@ public final class WebServer {
         sb.append("</select></label> <label><input type=\"checkbox\" name=\"or\" value=\"1\"")
                 .append(or ? " checked" : "").append("> almeno una parola (OR)</label></form>");
         if (!q.isBlank()) {
-            List<Integer> res = searcher.get(ocr).get(modo).searchRanked(q, ord, !or);
-            sb.append("<p>").append(res.size()).append(" risultati (mostrati i primi 50)</p><ul>");
-            for (int id : res.subList(0, Math.min(50, res.size()))) sb.append("<li>").append(esc(base.doc(id))).append("</li>");
+            Searcher.Risposta res = searcher.get(ocr).get(modo).searchDettaglio(q, ord, !or, 50);
+            sb.append("<p>").append(res.totale()).append(" risultati (mostrati i primi 50)</p><ul>");
+            for (Searcher.Risultato x : res.risultati()) {
+                sb.append("<li>").append(esc(base.doc(x.docId()))).append("<br><small>");
+                if (ord != Ranker.Modello.NESSUNO) {
+                    sb.append("punteggio ").append(String.format(Locale.ITALIAN, "%.3f", x.punteggio())).append(" &middot; ");
+                }
+                sb.append("trovata per: ").append(esc(String.join(", ", x.termini()))).append("</small></li>");
+            }
             sb.append("</ul>");
         }
         return sb.append("<p><small>Usa * come jolly (es. <code>lava*</code>, <code>*frigo*</code>).</small></p></body></html>").toString();

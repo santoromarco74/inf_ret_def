@@ -24,6 +24,9 @@ public final class PostingList {
 
     public int[] toArray() { return ids.clone(); }
 
+    /** True se il docId e' nella lista (ricerca binaria, senza copiare l'array). */
+    public boolean contiene(int docId) { return Arrays.binarySearch(ids, docId) >= 0; }
+
     private boolean haSkip(int i) { return i % passo == 0 && i + passo < ids.length; }
 
     /** Intersezione con skip pointers. {@code confronti} (opzionale, lunghezza 1) conta i confronti fra docId. */
