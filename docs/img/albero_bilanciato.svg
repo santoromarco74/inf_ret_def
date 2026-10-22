@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 610" font-family="sans-serif" font-size="11">
+<defs><marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+<rect width="1200" height="610" fill="white"/>
+<text x="600.0" y="24" text-anchor="middle" font-size="14" font-weight="bold">Albero costruito dai termini ordinati (KGramIndex): primi 4 livelli</text>
+<text x="600.0" y="42" text-anchor="middle" fill="#555">3046 termini inseriti partendo dal termine di mezzo, poi le due metà: altezza 12 (minimo possibile 12), 10,66 confronti per ricerca in media</text>
+<line x1="600.0" y1="102.0" x2="310.0" y2="160.0" stroke="#e08a1e" stroke-width="3"/>
+<line x1="310.0" y1="194.0" x2="165.0" y2="252.0" stroke="#e08a1e" stroke-width="3"/>
+<line x1="165.0" y1="286.0" x2="92.5" y2="344.0" stroke="#e08a1e" stroke-width="3"/>
+<line x1="165.0" y1="286.0" x2="237.5" y2="344.0" stroke="#888" stroke-width="1.2"/>
+<line x1="310.0" y1="194.0" x2="455.0" y2="252.0" stroke="#888" stroke-width="1.2"/>
+<line x1="455.0" y1="286.0" x2="382.5" y2="344.0" stroke="#888" stroke-width="1.2"/>
+<line x1="455.0" y1="286.0" x2="527.5" y2="344.0" stroke="#888" stroke-width="1.2"/>
+<line x1="600.0" y1="102.0" x2="890.0" y2="160.0" stroke="#888" stroke-width="1.2"/>
+<line x1="890.0" y1="194.0" x2="745.0" y2="252.0" stroke="#888" stroke-width="1.2"/>
+<line x1="745.0" y1="286.0" x2="672.5" y2="344.0" stroke="#888" stroke-width="1.2"/>
+<line x1="745.0" y1="286.0" x2="817.5" y2="344.0" stroke="#888" stroke-width="1.2"/>
+<line x1="890.0" y1="194.0" x2="1035.0" y2="252.0" stroke="#888" stroke-width="1.2"/>
+<line x1="1035.0" y1="286.0" x2="962.5" y2="344.0" stroke="#888" stroke-width="1.2"/>
+<line x1="1035.0" y1="286.0" x2="1107.5" y2="344.0" stroke="#888" stroke-width="1.2"/>
+<line x1="92.5" y1="378.0" x2="56.2" y2="453.0" stroke="#e08a1e" stroke-width="3"/>
+<line x1="92.5" y1="378.0" x2="128.8" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="237.5" y1="378.0" x2="201.2" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="237.5" y1="378.0" x2="273.8" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="382.5" y1="378.0" x2="346.2" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="382.5" y1="378.0" x2="418.8" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="527.5" y1="378.0" x2="491.2" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="527.5" y1="378.0" x2="563.8" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="672.5" y1="378.0" x2="636.2" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="672.5" y1="378.0" x2="708.8" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="817.5" y1="378.0" x2="781.2" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="817.5" y1="378.0" x2="853.8" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="962.5" y1="378.0" x2="926.2" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="962.5" y1="378.0" x2="998.8" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="1107.5" y1="378.0" x2="1071.2" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<line x1="1107.5" y1="378.0" x2="1143.8" y2="453.0" stroke="#888" stroke-width="1.2"/>
+<rect x="565.6" y="68.0" width="68.8" height="34" rx="6" fill="#fdf0dc" stroke="#e08a1e" stroke-width="2"/>
+<text x="600.0" y="83.0" text-anchor="middle" font-size="11" font-weight="bold">barbecue</text>
+<text x="600.0" y="96.0" text-anchor="middle" font-size="9" fill="#666">3046</text>
+<rect x="282.2" y="160.0" width="55.6" height="34" rx="6" fill="#fdf0dc" stroke="#e08a1e" stroke-width="2"/>
+<text x="310.0" y="175.0" text-anchor="middle" font-size="11" font-weight="bold">825048</text>
+<text x="310.0" y="188.0" text-anchor="middle" font-size="9" fill="#666">1522</text>
+<rect x="140.5" y="252.0" width="49.0" height="34" rx="6" fill="#fdf0dc" stroke="#e08a1e" stroke-width="2"/>
+<text x="165.0" y="267.0" text-anchor="middle" font-size="11" font-weight="bold">375lt</text>
+<text x="165.0" y="280.0" text-anchor="middle" font-size="9" fill="#666">760</text>
+<rect x="69.5" y="344.0" width="46.0" height="34" rx="6" fill="#fdf0dc" stroke="#e08a1e" stroke-width="2"/>
+<text x="92.5" y="359.0" text-anchor="middle" font-size="11" font-weight="bold">200w</text>
+<text x="92.5" y="372.0" text-anchor="middle" font-size="9" fill="#666">379</text>
+<rect x="214.5" y="344.0" width="46.0" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="237.5" y="359.0" text-anchor="middle" font-size="11" font-weight="bold">600w</text>
+<text x="237.5" y="372.0" text-anchor="middle" font-size="9" fill="#666">380</text>
+<rect x="427.2" y="252.0" width="55.6" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="455.0" y="267.0" text-anchor="middle" font-size="11" font-weight="bold">951121</text>
+<text x="455.0" y="280.0" text-anchor="middle" font-size="9" fill="#666">761</text>
+<rect x="354.7" y="344.0" width="55.6" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="382.5" y="359.0" text-anchor="middle" font-size="11" font-weight="bold">919225</text>
+<text x="382.5" y="372.0" text-anchor="middle" font-size="9" fill="#666">380</text>
+<rect x="499.7" y="344.0" width="55.6" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="527.5" y="359.0" text-anchor="middle" font-size="11" font-weight="bold">976722</text>
+<text x="527.5" y="372.0" text-anchor="middle" font-size="9" fill="#666">380</text>
+<rect x="855.6" y="160.0" width="68.8" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="890.0" y="175.0" text-anchor="middle" font-size="11" font-weight="bold">mhrv4qla</text>
+<text x="890.0" y="188.0" text-anchor="middle" font-size="9" fill="#666">1523</text>
+<rect x="722.0" y="252.0" width="46.0" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="745.0" y="267.0" text-anchor="middle" font-size="11" font-weight="bold">fea</text>
+<text x="745.0" y="280.0" text-anchor="middle" font-size="9" fill="#666">761</text>
+<rect x="649.5" y="344.0" width="46.0" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="672.5" y="359.0" text-anchor="middle" font-size="11" font-weight="bold">cust</text>
+<text x="672.5" y="372.0" text-anchor="middle" font-size="9" fill="#666">380</text>
+<rect x="773.2" y="344.0" width="88.6" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="817.5" y="359.0" text-anchor="middle" font-size="11" font-weight="bold">impastatore</text>
+<text x="817.5" y="372.0" text-anchor="middle" font-size="9" fill="#666">380</text>
+<rect x="990.7" y="252.0" width="88.6" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="1035.0" y="267.0" text-anchor="middle" font-size="11" font-weight="bold">scfss5e4gta</text>
+<text x="1035.0" y="280.0" text-anchor="middle" font-size="9" fill="#666">761</text>
+<rect x="924.8" y="344.0" width="75.4" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="962.5" y="359.0" text-anchor="middle" font-size="11" font-weight="bold">portatile</text>
+<text x="962.5" y="372.0" text-anchor="middle" font-size="9" fill="#666">380</text>
+<rect x="1033.5" y="344.0" width="148.0" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="1107.5" y="359.0" text-anchor="middle" font-size="11" font-weight="bold">tabi1gen2fespacegray</text>
+<text x="1107.5" y="372.0" text-anchor="middle" font-size="9" fill="#666">380</text>
+<polygon points="56.2,453.0 26.2,509.0 86.2,509.0" fill="#f3f3f3" stroke="#e08a1e" stroke-width="2"/>
+<text x="56.2" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="56.2" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="128.8,453.0 98.8,509.0 158.8,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="128.8" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="128.8" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="201.2,453.0 171.2,509.0 231.2,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="201.2" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="201.2" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="273.8,453.0 243.8,509.0 303.8,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="273.8" y="489.0" text-anchor="middle" font-size="11">190</text>
+<text x="273.8" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="346.2,453.0 316.2,509.0 376.2,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="346.2" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="346.2" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="418.8,453.0 388.8,509.0 448.8,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="418.8" y="489.0" text-anchor="middle" font-size="11">190</text>
+<text x="418.8" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="491.2,453.0 461.2,509.0 521.2,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="491.2" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="491.2" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="563.8,453.0 533.8,509.0 593.8,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="563.8" y="489.0" text-anchor="middle" font-size="11">190</text>
+<text x="563.8" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="636.2,453.0 606.2,509.0 666.2,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="636.2" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="636.2" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="708.8,453.0 678.8,509.0 738.8,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="708.8" y="489.0" text-anchor="middle" font-size="11">190</text>
+<text x="708.8" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="781.2,453.0 751.2,509.0 811.2,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="781.2" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="781.2" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="853.8,453.0 823.8,509.0 883.8,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="853.8" y="489.0" text-anchor="middle" font-size="11">190</text>
+<text x="853.8" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="926.2,453.0 896.2,509.0 956.2,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="926.2" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="926.2" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="998.8,453.0 968.8,509.0 1028.8,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="998.8" y="489.0" text-anchor="middle" font-size="11">190</text>
+<text x="998.8" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="1071.2,453.0 1041.2,509.0 1101.2,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="1071.2" y="489.0" text-anchor="middle" font-size="11">189</text>
+<text x="1071.2" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<polygon points="1143.8,453.0 1113.8,509.0 1173.8,509.0" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="1143.8" y="489.0" text-anchor="middle" font-size="11">190</text>
+<text x="1143.8" y="503.0" text-anchor="middle" font-size="9" fill="#666">h 8</text>
+<text x="8" y="62.0" fill="#888" font-size="10">livello 1</text>
+<text x="8" y="154.0" fill="#888" font-size="10">livello 2</text>
+<text x="8" y="246.0" fill="#888" font-size="10">livello 3</text>
+<text x="8" y="338.0" fill="#888" font-size="10">livello 4</text>
+<rect x="40" y="548" width="58" height="34" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="69" y="562" text-anchor="middle" font-size="11" font-weight="bold">termine</text>
+<text x="69" y="575" text-anchor="middle" font-size="9" fill="#666">n. nodi</text>
+<text x="108" y="562">nodo: sotto il termine il numero di nodi del suo sottoalbero.</text>
+<text x="108" y="577">A sinistra stanno i termini minori, a destra i maggiori.</text>
+<polygon points="520,548 490,588 550,588" fill="#f3f3f3" stroke="#999" stroke-width="1.2"/>
+<text x="565" y="562">sottoalbero non disegnato: n. di nodi e altezza (h).</text>
+<line x1="845" y1="556" x2="885" y2="556" stroke="#e08a1e" stroke-width="3"/>
+<text x="895" y="560">cammino più lungo: 12 nodi (minimo possibile 12).</text>
+</svg>

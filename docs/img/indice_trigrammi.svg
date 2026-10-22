@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 790" font-family="sans-serif" font-size="11">
+<defs><marker id="fr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+<rect width="1160" height="790" fill="white"/>
+<text x="580.0" y="24" text-anchor="middle" font-size="14" fill="#222" font-weight="bold">Indice a trigrammi (KGramIndex): 3046 termini, 6069 trigrammi distinti</text>
+<text x="580.0" y="42" text-anchor="middle" font-size="11" fill="#555">ogni trigramma (con $ ai bordi del termine) punta alla lista ordinata dei termini che lo contengono; stesso indice per wildcard e fuzzy</text>
+<text x="20" y="70" text-anchor="start" font-size="12" fill="#222" font-weight="bold">A. Wildcard «*trice»: il pezzo fisso «trice$» dà 4 trigrammi; si intersecano le loro liste e si controllano i candidati col pattern</text>
+<rect x="20" y="84" width="262" height="122" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="32" y="106" text-anchor="start" font-size="16" fill="#2a6fbb" font-weight="bold" font-family="monospace">tri</text>
+<text x="270" y="105" text-anchor="end" font-size="11" fill="#555">lista di 11 termini</text>
+<text x="32" y="126" font-size="9.5" style="white-space:pre"><tspan fill="#666">3filtri, </tspan><tspan fill="#666">elettrica, </tspan><tspan fill="#666">filtri, </tspan><tspan fill="#3f9a6b" font-weight="bold">friggitrice, </tspan></text>
+<text x="32" y="138" font-size="9.5" style="white-space:pre"><tspan fill="#666">friggitrici, </tspan><tspan fill="#3f9a6b" font-weight="bold">lavatrice, </tspan><tspan fill="#666">sfiltri, </tspan></text>
+<text x="32" y="150" font-size="9.5" style="white-space:pre"><tspan fill="#666">strike4gdarkgrey, </tspan><tspan fill="#666">trim, </tspan><tspan fill="#666">trio, </tspan><tspan fill="#666">tritatutto</tspan></text>
+<text x="294.0" y="151.0" text-anchor="middle" font-size="20" fill="#555" font-weight="bold">∩</text>
+<rect x="20" y="218" width="262" height="40" rx="6" fill="white" stroke="#999" stroke-width="1.2"/>
+<text x="32" y="235" text-anchor="start" font-size="11" fill="#222" font-weight="bold">candidati: 11</text>
+<text x="32" y="250" text-anchor="start" font-size="9.5" fill="#666">tutti i termini della lista</text>
+<line x1="151.0" y1="206" x2="151.0" y2="218" stroke="#555" stroke-width="1.4" marker-end="url(#fr)"/>
+<rect x="306" y="84" width="262" height="122" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="318" y="106" text-anchor="start" font-size="16" fill="#2a6fbb" font-weight="bold" font-family="monospace">ric</text>
+<text x="556" y="105" text-anchor="end" font-size="11" fill="#555">lista di 20 termini</text>
+<text x="318" y="126" font-size="9.5" style="white-space:pre"><tspan fill="#666">1000girice, </tspan><tspan fill="#666">americana, </tspan><tspan fill="#666">aspirabriciole, </tspan></text>
+<text x="318" y="138" font-size="9.5" style="white-space:pre"><tspan fill="#666">auric, </tspan><tspan fill="#666">auricolare, </tspan><tspan fill="#666">caricabatt, </tspan><tspan fill="#666">elettrica, </tspan></text>
+<text x="318" y="150" font-size="9.5" style="white-space:pre"><tspan fill="#3f9a6b" font-weight="bold">friggitrice, </tspan><tspan fill="#666">friggitrici, </tspan><tspan fill="#3f9a6b" font-weight="bold">lavatrice, </tspan></text>
+<text x="318" y="162" font-size="9.5" style="white-space:pre"><tspan fill="#666">nespricialde, </tspan><tspan fill="#666">rasoioric, </tspan><tspan fill="#666">ric, </tspan><tspan fill="#666">ricarica, </tspan></text>
+<text x="318" y="174" font-size="9.5" style="white-space:pre"><tspan fill="#666">ricd1217, </tspan><tspan fill="#666">ricd1228, </tspan><tspan fill="#666">ricd1244, </tspan><tspan fill="#666">ricd1250, </tspan></text>
+<text x="318" y="186" font-size="9.5" style="white-space:pre"><tspan fill="#666">ricev, </tspan><tspan fill="#666">scoparic</tspan></text>
+<text x="580.0" y="151.0" text-anchor="middle" font-size="20" fill="#555" font-weight="bold">∩</text>
+<rect x="306" y="218" width="262" height="40" rx="6" fill="white" stroke="#999" stroke-width="1.2"/>
+<text x="318" y="235" text-anchor="start" font-size="11" fill="#222" font-weight="bold">dopo «ric»: 4 candidati</text>
+<text x="318" y="250" text-anchor="start" font-size="9.5" fill="#666">elettrica, friggitrice, friggitrici, lavatrice</text>
+<line x1="437.0" y1="206" x2="437.0" y2="218" stroke="#555" stroke-width="1.4" marker-end="url(#fr)"/>
+<rect x="592" y="84" width="262" height="122" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="604" y="106" text-anchor="start" font-size="16" fill="#2a6fbb" font-weight="bold" font-family="monospace">ice</text>
+<text x="842" y="105" text-anchor="end" font-size="11" fill="#555">lista di 14 termini</text>
+<text x="604" y="126" font-size="9.5" style="white-space:pre"><tspan fill="#666">1000girice, </tspan><tspan fill="#666">agxiceblue, </tspan><tspan fill="#666">alice, </tspan></text>
+<text x="604" y="138" font-size="9.5" style="white-space:pre"><tspan fill="#666">amicosupervoice, </tspan><tspan fill="#666">choicewatch2iblack, </tspan></text>
+<text x="604" y="150" font-size="9.5" style="white-space:pre"><tspan fill="#3f9a6b" font-weight="bold">friggitrice, </tspan><tspan fill="#666">greenjuice, </tspan></text>
+<text x="604" y="162" font-size="9.5" style="white-space:pre"><tspan fill="#666">h400smartblackpiuchoicex7, </tspan></text>
+<text x="604" y="174" font-size="9.5" style="white-space:pre"><tspan fill="#666">h400smartgoldpiuchoicex7l, </tspan><tspan fill="#666">ice, </tspan><tspan fill="#3f9a6b" font-weight="bold">lavatrice, </tspan></text>
+<text x="604" y="186" font-size="9.5" style="white-space:pre"><tspan fill="#666">licenza, </tspan><tspan fill="#666">ricev, </tspan><tspan fill="#666">sma5g6bliceue</tspan></text>
+<text x="866.0" y="151.0" text-anchor="middle" font-size="20" fill="#555" font-weight="bold">∩</text>
+<rect x="592" y="218" width="262" height="40" rx="6" fill="white" stroke="#999" stroke-width="1.2"/>
+<text x="604" y="235" text-anchor="start" font-size="11" fill="#222" font-weight="bold">dopo «ice»: 2 candidati</text>
+<text x="604" y="250" text-anchor="start" font-size="9.5" fill="#666">friggitrice, lavatrice</text>
+<line x1="723.0" y1="206" x2="723.0" y2="218" stroke="#555" stroke-width="1.4" marker-end="url(#fr)"/>
+<rect x="878" y="84" width="262" height="122" rx="6" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="890" y="106" text-anchor="start" font-size="16" fill="#2a6fbb" font-weight="bold" font-family="monospace">ce$</text>
+<text x="1128" y="105" text-anchor="end" font-size="11" fill="#555">lista di 16 termini</text>
+<text x="890" y="126" font-size="9.5" style="white-space:pre"><tspan fill="#666">1000girice, </tspan><tspan fill="#666">alice, </tspan><tspan fill="#666">amicosupervoice, </tspan><tspan fill="#666">ce, </tspan></text>
+<text x="890" y="138" font-size="9.5" style="white-space:pre"><tspan fill="#666">dolce, </tspan><tspan fill="#666">elegance, </tspan><tspan fill="#666">fcn300ace, </tspan><tspan fill="#666">force, </tspan></text>
+<text x="890" y="150" font-size="9.5" style="white-space:pre"><tspan fill="#3f9a6b" font-weight="bold">friggitrice, </tspan><tspan fill="#666">greenjuice, </tspan><tspan fill="#666">ice, </tspan><tspan fill="#3f9a6b" font-weight="bold">lavatrice, </tspan></text>
+<text x="890" y="162" font-size="9.5" style="white-space:pre"><tspan fill="#666">luce, </tspan><tspan fill="#666">vivavoce, </tspan><tspan fill="#666">vivoce, </tspan><tspan fill="#666">voce</tspan></text>
+<rect x="878" y="218" width="262" height="40" rx="6" fill="white" stroke="#999" stroke-width="1.2"/>
+<text x="890" y="235" text-anchor="start" font-size="11" fill="#222" font-weight="bold">dopo «ce$»: 2 candidati</text>
+<text x="890" y="250" text-anchor="start" font-size="9.5" fill="#666">friggitrice, lavatrice</text>
+<line x1="1009.0" y1="206" x2="1009.0" y2="218" stroke="#555" stroke-width="1.4" marker-end="url(#fr)"/>
+<rect x="20" y="274" width="1120" height="38" rx="6" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="34" y="290" text-anchor="start" font-size="11" fill="#222" font-weight="bold">Controllo di ogni candidato col pattern «*trice» (funzione corrisponde, senza regex):  friggitrice ✓  lavatrice ✓  →  2 termini</text>
+<text x="34" y="305" text-anchor="start" font-size="9.5" fill="#444">i trigrammi garantiscono che i pezzi ci sono, non che siano contigui e al posto giusto: qui il controllo non scarta nessuno dei 2 candidati. Le righe del risultato sono quelle che contengono almeno uno dei due termini.</text>
+<line x1="1009.0" y1="258" x2="1009.0" y2="274" stroke="#555" stroke-width="1.4" marker-end="url(#fr)"/>
+<line x1="20" y1="326" x2="1140" y2="326" stroke="#ccc"/>
+<text x="20" y="348" text-anchor="start" font-size="12" fill="#222" font-weight="bold">B. Fuzzy «frigitrice» (una g mancante): l'indice dice quali termini condividono trigrammi con la parola sbagliata</text>
+<rect x="20" y="360" width="262" height="36" rx="6" fill="white" stroke="#999" stroke-width="1.2"/>
+<text x="32" y="375" text-anchor="start" font-size="12" fill="#222" font-weight="bold">3046 termini</text>
+<text x="32" y="389" text-anchor="start" font-size="10" fill="#555">nel dizionario</text>
+<line x1="285" y1="378" x2="303" y2="378" stroke="#555" stroke-width="1.4" marker-end="url(#fr)"/>
+<rect x="306" y="360" width="262" height="36" rx="6" fill="white" stroke="#999" stroke-width="1.2"/>
+<text x="318" y="375" text-anchor="start" font-size="12" fill="#222" font-weight="bold">69 termini</text>
+<text x="318" y="389" text-anchor="start" font-size="10" fill="#555">con almeno 1 trigramma in comune</text>
+<line x1="571" y1="378" x2="589" y2="378" stroke="#555" stroke-width="1.4" marker-end="url(#fr)"/>
+<rect x="592" y="360" width="262" height="36" rx="6" fill="white" stroke="#999" stroke-width="1.2"/>
+<text x="604" y="375" text-anchor="start" font-size="12" fill="#222" font-weight="bold">4 termini</text>
+<text x="604" y="389" text-anchor="start" font-size="10" fill="#555">con Jaccard ≥ 0,2</text>
+<line x1="857" y1="378" x2="875" y2="378" stroke="#555" stroke-width="1.4" marker-end="url(#fr)"/>
+<rect x="878" y="360" width="262" height="36" rx="6" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="890" y="375" text-anchor="start" font-size="12" fill="#222" font-weight="bold">2 termini</text>
+<text x="890" y="389" text-anchor="start" font-size="10" fill="#555">con Levenshtein ≤ 2 (parola &gt; 4 lettere)</text>
+<text x="100" y="430" text-anchor="middle" font-size="11" fill="#555" font-weight="bold">trigrammi di «frigitrice»</text>
+<text x="605" y="430" text-anchor="middle" font-size="11" fill="#555" font-weight="bold">termini con Jaccard ≥ 0,2</text>
+<line x1="140" y1="451" x2="520" y2="463.0" stroke="#e08a1e" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="481" x2="520" y2="463.0" stroke="#e08a1e" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="511" x2="520" y2="463.0" stroke="#e08a1e" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="451" x2="520" y2="545.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="481" x2="520" y2="545.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="511" x2="520" y2="545.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="571" x2="520" y2="545.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="601" x2="520" y2="545.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="631" x2="520" y2="545.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="661" x2="520" y2="545.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="451" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="481" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="511" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="571" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="601" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="631" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="661" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="691" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="721" x2="520" y2="627.0" stroke="#3f9a6b" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="631" x2="520" y2="709.0" stroke="#e08a1e" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="661" x2="520" y2="709.0" stroke="#e08a1e" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="691" x2="520" y2="709.0" stroke="#e08a1e" stroke-width="1.3" opacity="0.55"/>
+<line x1="140" y1="721" x2="520" y2="709.0" stroke="#e08a1e" stroke-width="1.3" opacity="0.55"/>
+<rect x="60" y="440" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="455" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">$fr</text>
+<rect x="60" y="470" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="485" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">fri</text>
+<rect x="60" y="500" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="515" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">rig</text>
+<rect x="60" y="530" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="545" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">igi</text>
+<rect x="60" y="560" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="575" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">git</text>
+<rect x="60" y="590" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="605" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">itr</text>
+<rect x="60" y="620" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="635" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">tri</text>
+<rect x="60" y="650" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="665" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">ric</text>
+<rect x="60" y="680" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="695" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">ice</text>
+<rect x="60" y="710" width="80" height="22" rx="5" fill="#e6eef8" stroke="#2a6fbb" stroke-width="1.2"/>
+<text x="100" y="725" text-anchor="middle" font-size="12" fill="#2a6fbb" font-weight="bold" font-family="monospace">ce$</text>
+<rect x="520" y="440.0" width="170" height="46" rx="6" fill="#fdf0dc" stroke="#e08a1e" stroke-width="1.2"/>
+<text x="532" y="459.0" text-anchor="start" font-size="13" fill="#222" font-weight="bold" font-family="monospace">frigo</text>
+<text x="532" y="477.0" text-anchor="start" font-size="10" fill="#555">3 trigrammi in comune</text>
+<text x="714" y="459.0" text-anchor="start" font-size="11" fill="#222">J = 3/12 = 0,25 ≥ 0,2 ✓</text>
+<text x="714" y="475.0" text-anchor="start" font-size="11" fill="#e08a1e" font-weight="bold">Levenshtein d = 6 &gt; 2 ✗  →  scartato</text>
+<rect x="520" y="522.0" width="170" height="46" rx="6" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="532" y="541.0" text-anchor="start" font-size="13" fill="#222" font-weight="bold" font-family="monospace">friggitrici</text>
+<text x="532" y="559.0" text-anchor="start" font-size="10" fill="#555">7 trigrammi in comune</text>
+<text x="714" y="541.0" text-anchor="start" font-size="11" fill="#222">J = 7/14 = 0,50 ≥ 0,2 ✓</text>
+<text x="714" y="557.0" text-anchor="start" font-size="11" fill="#3f9a6b" font-weight="bold">Levenshtein d = 2 ≤ 2 ✓  →  accettato</text>
+<rect x="520" y="604.0" width="170" height="46" rx="6" fill="#e3f3ea" stroke="#3f9a6b" stroke-width="1.2"/>
+<text x="532" y="623.0" text-anchor="start" font-size="13" fill="#222" font-weight="bold" font-family="monospace">friggitrice</text>
+<text x="532" y="641.0" text-anchor="start" font-size="10" fill="#555">9 trigrammi in comune</text>
+<text x="714" y="623.0" text-anchor="start" font-size="11" fill="#222">J = 9/12 = 0,75 ≥ 0,2 ✓</text>
+<text x="714" y="639.0" text-anchor="start" font-size="11" fill="#3f9a6b" font-weight="bold">Levenshtein d = 1 ≤ 2 ✓  →  accettato</text>
+<rect x="520" y="686.0" width="170" height="46" rx="6" fill="#fdf0dc" stroke="#e08a1e" stroke-width="1.2"/>
+<text x="532" y="705.0" text-anchor="start" font-size="13" fill="#222" font-weight="bold" font-family="monospace">lavatrice</text>
+<text x="532" y="723.0" text-anchor="start" font-size="10" fill="#555">4 trigrammi in comune</text>
+<text x="714" y="705.0" text-anchor="start" font-size="11" fill="#222">J = 4/15 = 0,27 ≥ 0,2 ✓</text>
+<text x="714" y="721.0" text-anchor="start" font-size="11" fill="#e08a1e" font-weight="bold">Levenshtein d = 5 &gt; 2 ✗  →  scartato</text>
+<text x="20" y="758" text-anchor="start" font-size="10.5" fill="#444">«frigitrice» non è nel dizionario: senza fuzzy la ricerca dà 0 righe; con la modalità FALLBACK usa i termini accettati (friggitrice, friggitrici) e trova 14 righe.</text>
+<text x="20" y="774" text-anchor="start" font-size="10.5" fill="#444">Dati reali dal corpus (data/corpus.tsv, 1067 righe, testo = codice + descrizione). Jaccard = trigrammi in comune / trigrammi distinti dei due termini.</text>
+</svg>
